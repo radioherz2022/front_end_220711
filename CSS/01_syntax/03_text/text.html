@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+                  @font-face{
+                    font-family:"Noto Sans korean"
+                    src:url("./NotoSansKR-Regular.otf");
+                    font-weight: 400px;
+                  }
+                        html {
+
+                          font-size: 32px;
+                        }
+                        body {
+                          font-size: 16px;
+                        }
+                        p {
+                          /*
+                  px:모니터의 화소수가 기준.
+                  em:부모 요소의 대문자 M이 기준.
+                  rem:최상위 요소(root)의 글자 크기를 기준.
+                          */
+                          font-family:"Nanum pen script"
+                          font-size: 24px;
+                          font-size: 1em;
+                          font-size: 0.5rem;
+                        }
+                        . weight {
+                          font-weight: 600; /* 100~900의 단위 사용, 400이 normal, 700 bold */
+                          font-weight: bold;
+                          font-weight: lighter;
+                        }
+                        .color{
+                          color:#e8e8e8; /* hex : 16진법 -> 0~f */
+                          color:#000000;
+                          color:#ffffff;
+                          color:#ff0000; /* 0~255 : 16진법 코드 두개로 표현 가능 */
+                          color:#0000ff;
+                        }
+                        .align{
+                          width:500px;
+                          text-align: justify; /* 양쪽 끝을 일자로 맞추기 위해 단어 사이 여백을 조금씩 다르게 조절 */
+                        }
+                        .transform{
+                          text-transform:uppercase; /* uppercase 다 대문자로 수정 */
+                          text-transform:lowercase; /* lowercase 다 소문자로 수정 */
+                          text-transform:capitalize; /* capitalize 모든 단어 앞글자가 대문자로 */
+                        }
+                        .decoration{
+            text-decoration: underline; /* 밑줄 */
+            text-decoration: overline; /* 윗줄 */
+            text-decoration: red line-through dotted; /* 글자 가운데 통과 */
+                        }
+                        .lineHeight{
+      line-height:1.5em; /* 행간 */
+                        }
+                        .spacing {
+                          letter-spacing:0.08em;
+                          word-spacing:10px;
+                        }
+    </style>
+  </head>
+  <body>
+    <h2>글자 관련 CSS 속성들</h2>
+    <p>font-size : 글자의 크기를 지정한다.</p>
+    <p class="weight">font-weight : 글자의 가중도(굵기)를 지정.</p>
+    <p class="color">color : 글자의 색상을 지정.</p>
+    <p class="align">text-align:글자 정렬을 지정</p>
+    <p class="align transform lineHeight">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Inventore eius
+      voluptatum libero atque, maxime obcaecati perferendis in, possimus esse
+      laboriosam nostrum voluptatibus tempora dolorum culpa aut iste vitae
+      veniam aspernatur animi voluptatem nihil repudiandae, ex explicabo? Saepe
+      vel assumenda corporis sed aspernatur quo sint alias, suscipit tempore
+      quos eos quod. Dolorum quod fugit laboriosam alias? Quae harum nam placeat
+      quibusdam sequi, iure dolor ipsum, iusto quasi tempore officia iste error
+      porro. Perferendis velit doloremque dolor ipsa, cum sequi animi error
+      officia dolorem blanditiis in mollitia atque quo modi ex eligendi quia
+      quibusdam molestias fugiat. Sed, deserunt et! Illum, eveniet placeat!
+    </p>
+    <p class="decoration">
+      text-decoration : 글자를 꾸며주는 속성(줄을 긋는다.)
+    </p>
+    <p class="spacing">
+      letter-spacing : 글자 간의 간격을 지정.<br />
+      word-spacing : 단어간의 간격을 지정.
+    </p>
+  </body>
+</html>

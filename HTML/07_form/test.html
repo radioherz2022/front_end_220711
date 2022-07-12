@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Input_test</title>
+    <style>
+      form {
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" id="form1">
+      <table>
+        <caption>
+          회원가입
+        </caption>
+        <tr>
+          <td><label for="username">이름</label></td>
+          <td>
+            <input
+              type="text"
+              id="username"
+              placeholder="이름"
+              autofocus
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="email">이메일</label></td>
+          <td>
+            <input type="email" id="email" placeholder="이메일" required />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="password">비밀번호</label></td>
+          <td>
+            <input
+              type="password"
+              id="password"
+              placeholder="비밀번호"
+              required
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>성별</td>
+          <label><input type="radio" name="gender" required />남성</label>
+          <label><input type="radio" name="gender" required />여성</label>
+        </tr>
+      </table>
+    </form>
+    <button id="form1">회원가입</button>
+    <button type="reset" id="form1">초기화</button>
+  </body>
+</html>
