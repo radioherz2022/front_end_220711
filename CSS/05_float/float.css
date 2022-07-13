@@ -1,0 +1,31 @@
+img:nth-child(1) {
+  float: right;
+  margin: 10px;
+}
+img:nth-child(2) {
+  float: left;
+  margin: 10px;
+}
+
+p {
+  text-align: justify;
+  background-color: blueviolet;
+}
+
+.box {
+  height: 100px;
+  background-color: red;
+  clear: both;
+  float: right;
+  width: 200px;
+  /* float을 적용하면 일반적인 흐름에 벗어나 인라인 블록처럼 동작. */
+}
+
+.container {
+  background-color: blue;
+  clear: right;
+}
+.container img {
+  /* 같은 방향으로 float된 요소는 옆으로 나열된다. */
+  float: left;
+}

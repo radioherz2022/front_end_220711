@@ -1,0 +1,117 @@
+.body {
+  width: 200px;
+  height: 500px;
+}
+.box {
+  background: blue;
+  color: #fff;
+
+  /* 기본값. 최대한의 너비를 가진다. */
+  width: auto;
+
+  /* 절대값 100px을 지정. */
+  width: 100px;
+
+  /* %:부모 태그의 너비에 대한 비율로 지정. */
+  width: 20%;
+
+  /* 속성의 기본값으로 초기화. */
+  width: initial;
+
+  /* 기본값. 가지고 있는 컨텐츠의 높이만큼 늘어난다. */
+  height: auto;
+
+  height: 50%;
+
+  /* */
+  width: 100px;
+  height: 100px;
+
+  /* display:요소를 어떻게 배치할 것인가에 대해 지정. */
+
+  /* display:너비와 높이 설정 가능. 줄바꿈이 일어난다 */
+  display: block;
+  /* inline : 너비와 높이 설정 불가능. 줄바꿈 일어나지 않는다 -> 자신이 가진 컨텐츠만큼만 영역을 차지 */
+  /* display: inline; */
+  /* inline-block : block과 inline의 중간 형태. -> 너비와 높이를 지정 가능. */
+  display: inline-block;
+}
+
+.box01 {
+  /* 값이 1개인 경우 상, 하, 좌, 우 모두 10px 적용. */
+  margin: 10px;
+
+  /* 값이 2개인 경우 : 차례대로 상하, 좌우에 적용 */
+  margin: 15px 30px;
+
+  /* 값이 3개인 경우 : 차례대로 상, 좌우, 하 */
+  margin: 20px 10px 5px;
+
+  /* 값이 4개인 경우 : 상부터 시계방향으로 우, 하, 좌, 순으로 적용. */
+  margin: 5px 10px 15px 20px;
+}
+
+.box02 {
+  /* 개별적으로 변경 가능 */
+  /* margin-top: 30px;
+  margin-left: 40px;
+  margin-bottom: 10px;
+  margin-right: 5px; */
+
+  padding: 10px 5px;
+  padding-top: 30px;
+
+  /* border와 padding을 width:100px에 포함시키지 않음 */
+  box-sizing: content-box;
+  /* border와 padding을 width:100px에 포함 */
+  box-sizing: border-box;
+}
+
+.container {
+  border: 1px solid red;
+}
+
+span {
+  display: inline-block;
+  /* inline margin은 좌우만 적용. padding 상하좌우 다 적용되지만 높이 계산은 원래 컨텐츠만큼만 계산. */
+  margin: 10px;
+  padding: 5px;
+  border: 1px solid black;
+}
+
+.borderBox {
+  margin-top: 50px;
+  width: 50px;
+  height: 50px;
+
+  /* 2px 두께의 빨간색 실선 */
+  border: 2px solid red;
+
+  /*  개별속성 */
+  border-color: black;
+  border-width: 5px;
+  border-style: dashed;
+  border-top: 5px solid blue;
+  border-bottom-color: tomato;
+  border-radius: 50%;
+}
+
+.wrapper {
+  padding: 20px;
+  width: 200px;
+  height: 300px;
+  border: 3px solid red;
+  overflow: hidden;
+  overflow: scroll;
+  overflow: auto;
+
+  /* x축, y축 별도 지정. */
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.item {
+  width: 300px;
+  height: 400px;
+  background-color: blue;
+}

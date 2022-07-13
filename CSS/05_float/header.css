@@ -1,0 +1,30 @@
+a {
+  text-decoration: none;
+}
+
+header {
+  height: 60px;
+  background: #e8e8e8;
+}
+
+ul {
+  font-size: 0;
+
+  /* 가운데로 보내려고 할 때*/
+  width: 500px;
+  margin: 0 auto;
+}
+
+li {
+  height: 60px;
+  width: 20%;
+  text-align: center;
+  line-height: 60px;
+  font-size: 16px;
+  display: inline-block;
+  background-color: aqua;
+}
+
+li a {
+  display: block;
+}
