@@ -1,9 +1,9 @@
 img:nth-child(1) {
-  float: right;
+  float: left;
   margin: 10px;
 }
 img:nth-child(2) {
-  float: left;
+  float: right;
   margin: 10px;
 }
 

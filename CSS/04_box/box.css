@@ -93,7 +93,7 @@ span {
   border-style: dashed;
   border-top: 5px solid blue;
   border-bottom-color: tomato;
-  border-radius: 50%;
+  border-radius: 20px;
 }
 
 .wrapper {
