@@ -1,0 +1,92 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.clearFix::after {
+  font-size: "";
+}
+
+header {
+  text-align: center;
+  background-color: #b3b3b3;
+  font-size: 0;
+  list-style: none;
+}
+
+header .gnbList {
+  font-size: 16px;
+  background-color: red;
+  display: inline-block;
+}
+header .gnbList li {
+  float: left;
+}
+
+header .gnbList li a {
+  display: inline-block;
+  width: 100px;
+  padding: 10px 0;
+}
+
+header .gnbList li a :hover {
+  background-color: #fff;
+}
+
+header .gnbList li a :active {
+  color: #b3b3b3;
+}
+
+header .gnbList li a:focus {
+  outline: 1px solid yellow;
+}
+
+.container {
+  width: 100%;
+  height: 2000px;
+  margin: 100px auto;
+}
+
+.imgBox {
+  width: 150px;
+  height: 250px;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: inline-block;
+  text-align: center;
+  line-height: 240px;
+  color: #fff;
+  background-size: cover;
+  background-position: center;
+  background-clip: content-box;
+  background-color: blue;
+}
+
+.imgBox:hover {
+  background-size: auto 120%;
+}
+
+.box01 {
+  background-image: url("./background_img.jpg");
+  background-size: 200px;
+}
+
+.box02 {
+  background-image: url("./flower_860.png");
+}
+
+.box03 {
+  background-image: url("./img_03.jpg");
+}
+
+.bg {
+  height: 300px;
+  background-image: url("./background_img.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.inputList input {
+  border: 2px solid red;
+}

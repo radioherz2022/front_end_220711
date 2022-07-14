@@ -1,0 +1,47 @@
+li.orange {
+  color: orange;
+}
+
+li.orange#big {
+  font-size: 32px;
+}
+
+li.podo.bold {
+  font-weight: 700;
+}
+
+ul > li {
+  margin-top: 10px;
+}
+
+.target > div {
+  border: 1px solid black;
+}
+
+.tabList > li {
+  border: 1px solid black;
+}
+
+.brandList .target {
+  font-weight: 700;
+}
+
+.brandList .target + li {
+  color: aqua;
+}
+
+.brandList .target ~ li {
+  color: red;
+}
+
+.productList .target h2 {
+  color: red;
+}
+
+.productList .target h2 + p {
+  color: aquamarine;
+}
+
+.inputList input[type="password"] {
+  border: 2px solid red;
+}
