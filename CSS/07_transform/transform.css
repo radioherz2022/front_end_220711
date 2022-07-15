@@ -1,0 +1,114 @@
+.container {
+  /* 원근감을 준다. 값이 클수록 멀리서 보는 듯한 효과(변화가 적다) */
+  perspective: 500px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.box + .box {
+  margin-top: 20px;
+}
+
+/* transform */
+
+.translateList .box:nth-child(2):hover {
+  /* 마우스 호버 시 y축 방향으로 10px 이동 */
+  transform: translateY(10px);
+}
+
+.translateList .box:nth-child(3):hover {
+  /* 마우스 호버 시 x축 10px, y축 10px 이동 */
+  transform: translate(10px, 10px);
+}
+
+.translateList .box:last-child:hover {
+  transform: translateZ(-30px);
+}
+
+/* scale */
+.scaleList .box:fiist-child:hover {
+  /* x축 방향을 1.1배로 확대. 비율로 입력해야 한다. */
+  /* 컨텐츠도 같이 확대.축소 */
+  transform: scaleX(1.1);
+  transform: scaleX(150%);
+  /* 음수값 입력시 요소가 반전 */
+  transform: scaleX(-100%);
+}
+
+.scaleList .box:nth-child(2):hover {
+  /* origin 기준축을 정한다 */
+  transform-origin: bottom;
+  tranform: scaleY(1.2);
+}
+
+.scaleList .box:nth-child(3):hover {
+  /* x축으로 1.5배, y축으로 2배 확대 */
+  transform: scale(1.5, 2);
+  /* 1개만 입력시 x,y 축 모두 1.2배 */
+  transform: scale(1.2);
+}
+
+.scaleList .box:last-child:hover {
+  transfrom: scaleZ(1.4);
+}
+
+.rotateList .box:first-child:hover {
+  /* 양수값을 입력시 시계 방향으로. 음수값을 입력시 반시계 방향으로 */
+  transform: rotate(90deg);
+}
+
+.rotateList .box:nth-child(2):hover {
+  /* x축으로 회전 */
+  transform: rotateX(20deg);
+}
+
+.rotateList .box:last-child:hover {
+  transform: rotateY(20deg);
+}
+
+.skewList .box:first-child:hover {
+  /* x축 방향으로 기울임 */
+  transform: skewX(30deg);
+}
+
+.skewList .box:nth-child(2):hover {
+  /* y축 방향으로 기울임 */
+  transform: skewY(20deg);
+}
+
+.skewList .box:last-child:hover {
+  /* x축 방향으로 10도, y축 방향으로 20도 기울임 */
+  transform: skew(10deg, 20deg);
+}
+
+.dice {
+  margin-top: 100px;
+  perspective-origin: top;
+  padding: 30px;
+}
+
+.surface {
+  width: 100px;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+}
+
+.surface:first-child {
+  transform: rotateX(-100deg);
+  transform-origin: top;
+  background-color: red;
+}
+
+.surface:nth-child(2) {
+  transform-origin: right;
+  transform: rotateY(-90deg);
+  background-color: blue;
+}

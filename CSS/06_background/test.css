@@ -17,54 +17,53 @@ header {
 header .gnbList {
   font-size: 16px;
   display: inline-block;
-  height:36px;
-  overflow:hidden;
+  height: 36px;
+  overflow: hidden;
+  transition: 0.25s;
 }
 
-header .gnbList:hover{
-  height:initial;
+header .gnbList:hover {
+  height: 200px;
 }
 
-header .gnbList li {
+header .gnbList > li {
   float: left;
 }
 
 .html::after {
-  content:"new";
-  font-size:x-small;
-background:red;
-color:#fff;
-padding:1px 4px;
-border-radius: 4px;
-
+  content: "new";
+  font-size: x-small;
+  background: red;
+  color: #fff;
+  padding: 1px 4px;
+  border-radius: 4px;
 }
 
-.depth01:hover{
+.depth01:hover {
   background-color: blue;
-  color:white;
+  color: white;
 }
 
-header .gnbList li:active{
-  background-color:black;
+header .gnbList li:active {
+  background-color: black;
 }
-
 
 header .gnbList li a {
   display: inline-block;
   width: 100px;
-padding: 10px 0;
+  padding: 10px 0;
 }
 
-header .gnbList .depth01 ul{
-  display:inline-block;
-  position:relative;
+header .gnbList .depth01 ul {
+  position: relative;
 }
 
 /*배너*/
 
 .container {
   width: 100%;
-  height: 1000px;
+  height: 600px;
+  text-align: center;
   margin: 100px auto;
 }
 
@@ -77,20 +76,28 @@ header .gnbList .depth01 ul{
   text-align: center;
   line-height: 240px;
   color: #fff;
-  background-size: cover;
+  background-size: auto 100%;
   background-position: center;
   background-clip: content-box;
   background-color: blue;
+  transition: 0.25s;
+  background-repeat: no-repeat;
+}
+
+.depth01 ul li:first-child {
+  margin-top: 10px;
+}
+
+.depth01 ul li {
+  padding: 0.25em;
 }
 
 .imgBox:hover {
-  background-size: auto 120%;
+  background-size: auto 110%;
 }
 
 .box01 {
   background-image: url("./background_img.jpg");
-  background-size: cover;
-  background-repeat:no-repeat;
 }
 
 .box02 {
@@ -111,4 +118,51 @@ header .gnbList .depth01 ul{
 
 .inputList input {
   border: 2px solid red;
+}
+
+.chat {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  background: #000;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  transition: 0.25s;
+  opacity: 0;
+  animation-name: slideUp, fadeIn;
+  animation-duration: 0.25s;
+  animation-fill-mode: forwards;
+}
+
+.chat:hover {
+  background-color: #fff;
+  color: #000;
+  border: 3px solid #000;
+}
+
+/* 초기값 설정 x => 원래 포지션 기준으로 움직임. animation-fill-mode 설정 필요 */
+@keyframes slideUp {
+  to {
+    transform: translateY(-20px);
+  }
+}
+
+/* 초기값을 설정. 애니메이션이 끝난 위치와 원래 위치가 동일. animation-fill-mode 필요 없음 */
+@keyframes slideUp02 {
+  from {
+    transform: translateY(20px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
 }

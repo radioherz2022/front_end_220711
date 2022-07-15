@@ -1,0 +1,21 @@
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+
+  /* 속성값의 변화하는 시간을 지정. */
+  transition-duration: 0.5s;
+  /* 속성값의 변화에 지연시간을 지정. */
+  transition-delay: 500ms;
+  /* 속성값의 변화 속도 커브를 지정. */
+  transition-timing-function: easy-in;
+  /* transition을 적용하고 싶은 속성을 골라낸다 */
+  transition-property: background-color;
+}
+
+.box:hover {
+  /* 마우스 호버 시 x축 방향으로 20px 이동 */
+  transform: tranlateX(20px);
+  background-color: black;
+  height: 150px;
+}
