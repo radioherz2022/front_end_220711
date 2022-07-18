@@ -1,0 +1,84 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.clearFix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.container {
+  display: grid;
+  height: 700px;
+  grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "footer footer footer";
+  grid-template-rows: auto 1fr 100px;
+  grid-template-columns: 150px 1fr 1fr;
+}
+
+.container header {
+  grid-area: header;
+  background: #e8e8e8;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  max-height: 40px;
+  overflow: hidden;
+  transition: 0.25s ease-in;
+}
+
+.container header:hover {
+  max-height: 200px;
+  padding-bottom: 20px;
+}
+
+.container header h1 {
+  position: absolute;
+  left: 15px;
+  top: 12px;
+}
+
+.container #gnb .gnbList {
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.container #gnb .gnbList > li {
+  float: left;
+}
+
+.container #gnb .gnbList > li .depth01 {
+  display: block;
+  height: 40px;
+  line-height: 40px;
+}
+
+.container #gnb .gnbList > li ul li a {
+  display: block;
+  padding: 5px 10px;
+}
+
+header {
+  background: #725858;
+  grid-area: header;
+}
+
+aside {
+  background: #cea6a6;
+  grid-area: sidebar;
+}
+
+main {
+  background: #f18b8b;
+  grid-area: main;
+}
+
+footer {
+  background: #632323;
+  grid-area: footer;
+}

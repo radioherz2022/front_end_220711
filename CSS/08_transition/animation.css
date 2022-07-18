@@ -13,7 +13,7 @@
   animation-duration: 0.5s; /* 애니메이션의 0.5s에 걸쳐 실행 시간을 지정. */
   animation-delay: 0.5s; /* 애니메이션이 0.5초 뒤에 실행. */
   animation-timing-function: linear; /* 애니메이션 속도를 지정. */
-  animation-iteration-count: 1;
+  animation-iteration-count: 1; /* 반복횟수 */
   animation-direction: normal;
   animation-fill-mode: both;
   /* 애니메이션 단축 속성 */
