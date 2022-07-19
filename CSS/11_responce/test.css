@@ -1,3 +1,5 @@
+/*@import "./media.css";*/
+
 a {
   text-decoration: none;
   color: inherit;
@@ -14,9 +16,16 @@ header {
   list-style: none;
 }
 
+header h2 {
+  float: left;
+  font-size: 18px;
+  line-height: 50px;
+}
+
 header .gnbList {
-  font-size: 16px;
   display: inline-block;
+  font-size: 16px;
+
   height: 36px;
   overflow: hidden;
   transition: 0.25s;
@@ -56,6 +65,14 @@ header .gnbList li a {
 
 header .gnbList .depth01 ul {
   position: relative;
+}
+
+header .btn {
+  float: right;
+  box-sizing: border-box;
+  width: 40px;
+  background-color: red;
+  line-height: 40px;
 }
 
 /*배너*/

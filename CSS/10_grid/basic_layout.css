@@ -63,6 +63,14 @@ a {
   padding: 5px 10px;
 }
 
+.btn i {
+  position: absolute;
+  cursor: pointer;
+  right: 15px;
+  top: 16px;
+  transform: translateY(-40%);
+}
+
 header {
   background: #725858;
   grid-area: header;

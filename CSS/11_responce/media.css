@@ -1,0 +1,33 @@
+/* 반응형웹 미디어쿼리 사용법 */
+
+@media (max-width: 500px) {
+  header .gnbList {
+    display: block;
+    font-size: 0.8rem;
+  }
+
+  header .gnbList .depth01 {
+    display: none;
+  }
+  header .gnbList .depth01:first-child {
+    display: block;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container .imgBox {
+    width: 230px;
+    margin: 8px 0;
+  }
+
+  /* 
+  줄어들었을 때 메뉴명이 세로로 나열되게 정리하는 법
+  1. display:block;
+  2. flex-direction:column;
+  */
+}
