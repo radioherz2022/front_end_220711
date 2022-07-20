@@ -42,7 +42,7 @@ var score = 90; // 우항에 있는 90을 좌항의 score 변수에 할당
 score += 10; // score=score +10 100
 score -= 10; //score=score -10 90
 score *= 2; //score=score *2 180
-socre /= 3; //score=score /3 60
+score /= 3; //score=score /3 60
 score %= 7; //score=score %7 4
 console.log(score);
 
