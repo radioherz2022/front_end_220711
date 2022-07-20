@@ -1,58 +1,188 @@
-a{
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e2e2e2;
+}
+
+:root {
+  --main-color: #772480;
+}
+
+a {
   text-decoration: none;
-  color:inherit;
+  color: inherit;
 }
 
 header {
-  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 30px;
   height: 150px;
-  background-color: rgb(180, 180, 180);
+
+  color: #fff;
+  font-weight: 700;
   position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1; /* 레이어개념처럼 제일 상단으로 올라옴 */
 }
 
-.gnb {
+header:hover {
+  background-color: #fff;
+  color: #000;
+  transition: 1s;
+}
+
+#logo {
+  flex: 1;
+}
+
+#logo a {
+  display: inline-block;
+  height: 50px;
+  width: 127px;
+  background: url(./img-sprites.png) -240px -120px no-repeat;
+  /* 들여쓰기 */
+  font-size: 0;
+  text-indent: 9999px;
+}
+
+header:hover #logo a {
+  background: url(./img-sprites.png) -80px -120px no-repeat;
+}
+
+#gnb {
+  flex: 3;
+}
+
+#gnb .gnbList {
   display: flex;
-  justify-content: space-between;
+  height: 150px;
 }
 
-header .brand {
-  width:227px;
-  height:150px;
+#gnb .gnbList li {
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
-
-}
-header .brand a{
-  width:127px;
-  height:50px;
-  background-image: url("./img-sprites.png");
-  background-position: -80px -120px;
-}
-
-.gnbList{
-  display:flex;
-  width:100%;
-  height:150px;
-  align-items: center;
-
-}
-
-.gnbList li a{
-  margin-left:25px;
-}
-
-.setting {
-  display:flex;
   align-items: center;
 }
 
-.line::after {
+#gnb .gnbList li ::before {
   content: "";
   display: block;
-  height: 10px;
-  width: 1px;
-  background: rgb(219, 219, 219);
-  margin:0 15px;
+  height: 3px;
+  width: 0;
+  background-color: var(--main-color);
+
+  transition: 0.3s;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }
 
+#gnb .gnbList li :hover::before {
+  left: 0;
+  width: 100%;
+}
+
+#gnb .gnbList li + li {
+  margin-left: 20px;
+}
+
+#gnb .gnbList li > a:hover {
+  color: var(--main-color);
+}
+
+.sideMenu {
+  flex: 1;
+}
+.sideMenu ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* sideMenu 세로길이에서 센터로 모든 요소가 똑바로 나열될 수 있도록하는 방법 */
+.sideMenu ul {
+  display: flex;
+  align-items: center;
+}
+
+.sideMenu ul li + li::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  background: rgb(256, 256, 256, 0.1);
+  margin: 0 10px;
+}
+.sideMenu ul li strong {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+
+  line-height: 20px;
+  text-align: center;
+  color: #fff;
+
+  border-radius: 50%;
+  background-color: var(--main-color);
+}
+
+#mainVisual .videoBox {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#mainVisual .videoBox video {
+  width: 100%;
+  /*transform: scale(1.3);*/ /*transform-origin(변형 기준축):center center 기본*/
+  animation: zoomOut 7s linear 0s infinite normal;
+  position: relative;
+}
+
+@keyframes zoomOut {
+  form {
+    transform: scale(1.3);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+#mainVisual .textBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  font-weight: 700;
+}
+#mainVisual .textBox h3 {
+  font-size: 60px;
+  margin-bottom: 20px;
+  animation-name: slideUp;
+  animation-duration: 0.6s;
+}
+
+#mainVisual .textBox p {
+  line-height: 1.4em; /*줄간격*/
+  animation-name: slideUp;
+  animation-duration: 0.6s;
+  animation-delay: 50ms;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
