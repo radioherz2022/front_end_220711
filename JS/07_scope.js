@@ -59,3 +59,36 @@ closuer(); // getClouser 함수가 끝났지만 getClouser함수의 변수를 �
 closuer();
 closuer();
 closuer();
+
+// var, let, const 스코프 차이
+// 1. var로 선언한 변수만 호이스팅 => 끌어올린다.
+console.log(x);
+// console.log(number); 참조 에러 발생!!
+var x;
+let number;
+
+// 2. var 변수는 재선언 가능. let, const는 재선언 불가능
+var x = 1;
+// let number 에러 발생!! let은 재선언 불가능.
+
+// var는 함수의 코드 블록의 스코프만 지원
+// for, if문의 코드 블록에 선언하면 전역에 선언한 것과 동일
+
+// 함수 코드 블록이 아니기 때문에 전역 변수로 x를 재선언한 것과 동일
+for (var x = 0; x < 5; x++) {
+  console.log(x);
+}
+// 함수이기 때문에 코드 블록 안에서만 유효한 변수를 선언한 것과 동일
+function consoleX() {
+  var x = 1;
+  console.log(x);
+}
+// let은 함수 외의 코드 블록 스코프도 유효
+for (let x = 0; x < 3; x++) {
+  console.log(x);
+}
+
+// const는 상수 => 변하지 않는 수를 의미 => 재선언, 재할당 불가능
+// 선언과 동시에 값을 할당 즉 초기화를 해야한다. => 보통 const 대문자로 작성
+const TAX_RATIO = 10;
+// TAX_RATIO = 20; 상수에는 재할당 불가능
