@@ -84,7 +84,8 @@
 
       // 문제1. big이라는 클래스를 가진 box는 너비와 높이를 200px
       let bigBox = document.querySelector(".big");
-      // bigBox.style = "width:200px, height:200px;";
+      // bigBox.style = "width:200px, height:200px;"; => 모든 스타일 속성을 덮어씌운다.
+      // 위 코드와 동일하게 동작
       bigBox.style.width = "200px";
       bigBox.style.height = "200px";
 

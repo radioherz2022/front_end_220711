@@ -56,14 +56,22 @@
 
       //container안의 html요소들을 참조
       container.log(container.innerHTML);
-      //container안의 html요소들을 갱신(업데이트)
-      container.innerHTML = "<div>div태그 추가!</div>";
+      // container안의 html 요소들을 갱신(업데이트)
+      //   container.innerHTML = "<div>div태그 추가!</div>";s
       // += 연산자를 사용하면 기존 내용을 지우지 않고 추가하는 것이 가능하다.
       container.innerHTML += "<div class='box'>div태그 추가!</div>";
 
-      // str변수에 먼저 문자열의 형태로 더해준 후 마지막에 innerHTML
-
-      // + 복습하기
+      // str 변수에 먼저 문자열의 형태로 더해준 후 마지막에 innerHTML
+      let str = "";
+      for (let i = 0; i < 1000; i++) {
+        str += "<div class='box'>div태그 추가!</div>";
+        // let boxElem = document.createElement("div");
+        // boxElem.classList.add("box");
+        // let textNode = document.createTextNode("div태그 추가!");
+        // boxElem.appendChild(textNode);
+        // container.appendChild(boxElem);
+      }
+      container.innerHTML = str;
     </script>
   </body>
 </html>

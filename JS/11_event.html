@@ -58,7 +58,8 @@
 
       // 요소.addEventListner("처리할 이벤트",콜백함수)
       // 요소에 이벤트 리스터를 더한다 => 중복적용
-      box.addEventListener("click", function () {
+      box.addEventListener("click", function (e) {
+        console.log(e);
         box.style.border = "3px solid red";
       });
       box.addEventListener("click", function () {
@@ -75,42 +76,44 @@
     </script>
     <div class="changeBox">
       <div class="box02"></div>
-      <script>
-        // 다시해봐요!
-        // let changeBox = document.querySelector(".changeBox .box02");
-        // let btnList = document.querySelectorAll("button");
-        // let colorArr = ["red", "blue", "green", "yellow"];
-        // for(let i = 0; i < btnList.length;i++){
-        // btnList[i].addEventListener("click", function () {
-        // changeBox.style.backgroundColor = colorArr[i];
-
-        //btnList[0].addEventListener("click", function () {
-        //  changeBox.style.backgroundColor = "red";
-        //});
-        //btnList[1].addEventListener("click", function () {
-        //  changeBox.style.backgroundColor = "blue";
-        //});
-        //btnList[2].addEventListener("click", function () {
-        //  changeBox.style.backgroundColor = "green";
-        //});
-        //btnList[3].addEventListener("click", function () {
-        //  changeBox.style.backgroundColor = "yellow";
-        //});
-
-        // Event.currentTarget : 이벤트 리스너가 등록된 요소
-        // Event.target :
-        let container = document.querySelector(".container .inner p");
-        container.addEventListener("click", function (e) {
-          console.log("e.target:", e.target);
-          console.log("e.currentTarget:", e.currentTarget);
-        });
-      </script>
       <div class="btnList">
         <button class="btn01">빨강색</button>
         <button class="btn02">파랑색</button>
         <button class="btn03">초록색</button>
         <button class="btn04">노랑색</button>
       </div>
+      <script>
+        // 문제 빨간색, 파란색, 초록색, 노란색 버튼 클릭시 박스의 색상 변경
+      // 클릭(이벤트)을 했을 때 색상 변경(요소 노드)
+        let changeBox = document.querySelector(".changeBox .box02");
+        let btnList = document.querySelectorAll("button");
+        let colorArr = ["red", "blue", "green", "yellow"];
+        for(let i = 0; i < btnList.length;i++){
+        btnList[i].addEventListener("click", function () {
+        changeBox.style.backgroundColor = colorArr[i];}
+        )};
+        // btnList[0].addEventListener("click", function () {
+        //   changeBox.style.backgroundColor = "red";
+        // });
+        // btnList[1].addEventListener("click", function () {
+        //   changeBox.style.backgroundColor = "blue";
+        // });
+        // btnList[2].addEventListener("click", function () {
+        //   changeBox.style.backgroundColor = "green";
+        // });
+        // btnList[3].addEventListener("click", function () {
+        //   changeBox.style.backgroundColor = "yellow";
+        // });
+
+        // Event.currentTarget : 이벤트 리스너가 등록된 요소
+        // Event.target : 실제 이벤트가 발생한 요소
+        let container = document.querySelector(".container");
+      container.addEventListener("click", function (e) {
+        console.log("e.target : ", e.target);
+        console.log("e.currentTarget : ", e.currentTarget);
+      });
+      </script>
+
     </div>
     <!--이벤트는 자식요소로부터 상위요소 전파(버블링)-->
     <div class="container" onclick="alert('container!')">
