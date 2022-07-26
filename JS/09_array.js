@@ -94,3 +94,10 @@ for (let i = 0; i < numbers.length; i++) {
   if (numbers[i] % 2 === 0) resultArr.push(numbers[i]);
 }
 console.log(resultArr);
+
+// concat() : 배열 두개를 합쳐서 새로운 배열을 반환
+//  => 원본 배열 변경 X
+let first = [1, 2, 3, 4];
+let second = [5, 6, 7, 8];
+let resultList = first.concat(second);
+console.log("concat:", resultList);
