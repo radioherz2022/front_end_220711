@@ -46,7 +46,7 @@ console.log(resultArr02);
 //  => 화살표 함수는 코드블록 생략시 바로 return
 //  => 화살표 함수는 매개변수가 하나면 () 생략 가능
 let resultArr03 = numArr.filter((num) => num % 2 === 0);
-
+console.log(resultArr03);
 // 문제1. 문자열 3개인 배열에서 글자수가 5개 이상인 문자열만 모아보세요.
 //   => 문자열.length => 문자의 개수
 
