@@ -22,6 +22,8 @@ let user02 = {
 user.send("안녕하세요!");
 user02.send("반갑습니다");
 
+// 객체 리터럴을 이용한 객체 생성을 좀 더 잘 관리하기 위한 방식으로 생성자 함수(객체 초기화 함수) 이용
+
 // 생성자(contructor) 함수 "new"입력 : 생성할 객체에 대한 형태(틀)을 미리 만들어 놓는다.
 // this.프로퍼티 = 값; 을 통해 생성될 객체의 상태(프로퍼티)를 미리 설정
 // => 자동차 공장의 자동차 틀 혹은 설계도
@@ -63,7 +65,6 @@ function Car(color, speed, gas, distance) {
 
 let car = new Car("red", 300, 40, 4);
 console.log(car);
-
 car.move(16);
 car.move(32);
 
@@ -107,9 +108,11 @@ function Animal(name, age) {
   this.name = name;
   this.age = age;
 }
+
 Animal.prototype.cry = function () {
   console.log(this.sound);
 };
+
 function Dog(name, age) {
   // this 바인딩
   // Animal을 호출하지만 this가 dog를 가르키게 함
@@ -117,6 +120,9 @@ function Dog(name, age) {
   Animal.call(this, name, age);
 }
 function Cat(name, age) {
+    // this 바인딩
+  // Animal을 호출하지만 this가 dog를 가르키게 함
+  // new Cat(이름, 나이) => new Animal(이름, 이름) = > this가 Animal이 아니라 Cat을 가르킨다.
   Animal.call(this, name, age);
 }
 

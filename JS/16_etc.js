@@ -53,7 +53,8 @@ let copy = {
 console.log(obj, copy);
 
 // 비구조화 할당(destructuring)
-// 배열 비구조화 할당 : let [변수1, 변수2]=[값1,값2] => 작성한 순서대로 변수에 할당
+// 배열 비구조화 할당
+// let [변수1, 변수2]=[값1,값2] => 작성한 순서대로 변수에 할당
 // 함수의 리턴값을 여러개 받을 때 유용하다
 let userNameList = ["goss", "egoing", "kinder"];
 let user01 = userNameList[0];
@@ -87,13 +88,13 @@ let rect = {
 let { width, getArea } = rect;
 console.log(width);
 
-let inputText = document.querySelector("inputText");
+let inputText = document.querySelector("input");
 inputText.addEventListener("keydown", function (e) {
-  // e.target.value에 input입력값이 담긴다.
+  // e.target.value에 input 입력값이 담긴다.
   // e.target에 있는 value 프로퍼티를 비구조화 할당
   let { value } = e.target;
-  console.log(e.target.value);
+  console.log(value);
 
   let textBox = document.createElement("p");
-  textBox.inputText = value;
+  textBox.innerText = value;
 });

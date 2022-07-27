@@ -26,9 +26,11 @@ let date = today.getDate(); // 일을 반환(1~31)
 let day = today.getDay(); // 0(일요일)~6(토요일)로 반환
 console.log(year, month, date, day);
 
+// 실행된 나라의 시간
 let hours = today.getHours(); // 시간(0~23)을 반환
 let minutes = today.getMinutes(); // 분(0~59)을 반환
 let seconds = today.getSeconds(); // 초(0~59)을 반환
+
 console.log(hours, minutes, seconds);
 
 // Date.parse() => 문자열을 날짜로 해석
@@ -39,6 +41,7 @@ yesterday.setMonth(6); // 1월 0부터 시작
 yesterday.setDate(26);
 
 console.log(year + "년", month + 1 + "월", date + "일");
+console.log(`${year}년 ${month+1}월 ${date}일`);
 
 let dateStr = today.toLocaleDateString("ko-KR", {
   year: "numeric",
@@ -82,6 +85,8 @@ console.log(Math.ceil(11.11 * 10) / 10);
 
 // 랜덤 : 0~1사이의 실수를 반환
 console.log(Math.random());
+
+// 랜덤 : 0 >= x < 1
 console.log(Math.floor(Math.random() * (100 - 1)) + 1);
 
 // 1~45 로또 6개 만들기 함수(중복X) > 배열
@@ -96,5 +101,19 @@ function getLotto() {
 }
 console.log(getLotto());
 
+function getLottog02() {
+  let lottoNumArr = [];
+  let result = [];
+  for (let i = 0; i <= 45; i++) {
+    lottoNumArr.push(i);
+  }
+  for (let i = 0; i < 6; i++) {
+    let randomIndex = Math.floor(Math.random() * lottoNumArr.length + 1);
+    result = result.concat(lottoNumArr.splice(randomIndex, 1));
+  }
+  return result;
+}
+console.log(getLottog02());
+
 // 중첩된 배열 평탄화 => 새로운 배열 반환
-console.log;
+console.log([[1], [2]].flat());
