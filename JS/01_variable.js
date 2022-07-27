@@ -39,7 +39,7 @@ console.log(firstName); // fistName 변수의 값을 참조하여 출력
 
 // first name => firstName : 카멜 케이스.
 // first name => first_name : 스네이크 케이스
-// first name => FirstNmae : 파스칼 케이스 => 클래스 명에 주로 사용.
+// first name => FirstName : 파스칼 케이스 => 클래스, 생성자함수 이름에 주로 사용.
 
 // 문제1 num1과 num2를 선언하고 각각 20, 30을 할당하여 출력
 var num1, num2; // 여러개의 변수 한번에 선언

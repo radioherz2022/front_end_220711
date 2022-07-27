@@ -29,6 +29,7 @@ numArr.forEach(function (n, i) {
   console.log(i + "번째", n);
 });
 
+// 짝수를 새로운 배열에 모으기
 let resultArr = [];
 for (let i = 0; i < numArr.length; i++) {
   if (numArr[i] % 2 === 0) {
@@ -70,7 +71,8 @@ console.log(userFind);
 // map() : 배열안의 요소들을 가공 => return된 값들을 모아서 새로운 배열
 let numArr02 = [4, 6, 7, 10];
 let doubleNumArr = numArr02.map(function (num) {
-  return num * 2;
+  let result = num * 2;
+  return result;
 });
 // 화살표 함수 활용
 let divideNumArr = numArr02.map((num) => num / 2);
@@ -114,7 +116,8 @@ let actionMovieNameList = actionMovieList.map((movie) => movie.title);
 console.log(actionMovieList);
 console.log(actionMovieNameList);
 
-// reduce
+// reduce : 누산기
+// 특정 연산을 반복 실행한 결과를 누적해서 반환
 
 let scoreList = [90, 80, 70, 70, 60];
 let totalScore = 0;
