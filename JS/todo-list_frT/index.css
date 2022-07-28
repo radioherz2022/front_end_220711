@@ -6,13 +6,19 @@
 }
 
 #todoForm {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+#todoForm::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
+
+#todoForm {
   width: 300px;
   height: 500px;
   border: 1px solid #b3b3b3;
   border-radius: 4px;
   overflow: auto;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
 }
 
 #todoForm .inputBox {
@@ -23,12 +29,13 @@
 
 #todoForm .inputBox input {
   flex: 1;
-  padding:5px;
+  outline: none;
+  padding: 5px;
 }
 
 #todoForm .inputBox button {
-  background-color: transparent;
   border-width: 1px;
+  background-color: transparent;
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
 }
@@ -42,6 +49,7 @@
 }
 
 #todoForm .todoList li:hover .btnDel {
+  /* 자리는 차지하지만 마우스에 보이지 않고 감지되지않는다?.*/
   visibility: visible;
 }
 
@@ -49,7 +57,7 @@
   visibility: hidden;
 }
 
-#todoForm .todoList li .done {
+#todoForm .todoList li.done {
   color: #b3b3b3;
   text-decoration: line-through;
 }
