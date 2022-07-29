@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      height: 300vh;
+      margin: 0;
+    }
+    .background {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url("./background_img.jpg");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .background p {
+      width: 50%;
+      color: #fff;
+      font-size: 32px;
+    }
+    .contentsBox p {
+      width: 500px;
+      color: rgb(151, 151, 151);
+      font-size: 20px;
+      display: absolute;
+    }
+    .contentsBox p:nth-child(1) {
+      left: -500px;
+      top: 100px;
+    }
+    .contentsBox p:nth-child(2) {
+      left: -500px;
+      bottom: 0;
+    }
+  </style>
+  <body>
+    <div class="background">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nobis
+        reprehenderit exercitationem quae aspernatur quaerat molestiae doloribus
+        quod, itaque quis inventore non voluptatum deserunt tenetur labore odio
+        id. Facilis, corrupti.
+      </p>
+    </div>
+    <div class="contentsBox">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+        cumque enim autem saepe voluptates esse iste, voluptatum, asperiores
+        eius adipisci, quas cum! Animi nihil, optio numquam voluptate maxime
+        obcaecati voluptas?
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
+        cumque enim autem saepe voluptates esse iste, voluptatum, asperiores
+        eius adipisci, quas cum! Animi nihil, optio numquam voluptate maxime
+        obcaecati voluptas?
+      </p>
+    </div>
+    <script>
+      let background = document.querySelector(".background");
+      let textBox = document.querySelector(".background p");
+      let contentsBox = document.querySelector(".contentsBox");
+      let contentsList = document.querySelectorAll("p");
+      console.log(background.offsetTop, contentsBox.offsetTop);
+
+      window.addEventListener("scroll", function () {
+        console.log(scrollY);
+        background.style.backgroundPositionY = `${scrollY / 2}px`;
+        contentsList[0].style.transform = `translate(${scrollY - 500}px)`;
+        contentsList[1].style.transform = `translate(-${scrollY - 500}px)`;
+      });
+    </script>
+  </body>
+</html>
