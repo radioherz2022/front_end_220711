@@ -27,7 +27,15 @@
       width: 50%;
       color: #fff;
       font-size: 32px;
+      position: absolute;
     }
+
+.contentsBox{
+  position: relative;
+  height:600px;
+  overflow:hidden;
+}
+
     .contentsBox p {
       width: 500px;
       color: rgb(151, 151, 151);
@@ -39,11 +47,12 @@
       top: 100px;
     }
     .contentsBox p:nth-child(2) {
-      left: -500px;
+      right: -500px;
       bottom: 0;
     }
   </style>
   <body>
+
     <div class="background">
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit nobis
@@ -66,19 +75,28 @@
         obcaecati voluptas?
       </p>
     </div>
+
     <script>
       let background = document.querySelector(".background");
       let textBox = document.querySelector(".background p");
       let contentsBox = document.querySelector(".contentsBox");
-      let contentsList = document.querySelectorAll("p");
+      let contentsList = document.querySelectorAll(".contetnsBox p");
+
+
       console.log(background.offsetTop, contentsBox.offsetTop);
 
       window.addEventListener("scroll", function () {
         console.log(scrollY);
         background.style.backgroundPositionY = `${scrollY / 2}px`;
-        contentsList[0].style.transform = `translate(${scrollY - 500}px)`;
-        contentsList[1].style.transform = `translate(-${scrollY - 500}px)`;
+        contentsList[0].style.transform = `translate(${scrollY - contentsBox.offsetTop + 500}px)`;
+        contentsList[1].style.transform = `translate(${-(scrollY - contentsBox.offsetTop + 500)}px)`;
+
       });
+
+
+
+
+
     </script>
   </body>
 </html>
