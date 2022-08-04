@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 
 
 import WordRelay from './components/WordRelay';
-import TrafficCard from './components/TrafficCard_1st';
+import TrafficCardFirst from './components/TrafficCardFirst';
 import Header from './components/Header';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
