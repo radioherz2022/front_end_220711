@@ -1,0 +1,126 @@
+/* https://www.playd.com/w/index.html */
+
+*{
+    list-style: none;
+    text-decoration: none;
+}
+
+.navBox {
+    height:80px;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.navBox h2{
+    font-size: 28px;
+    margin-left: 20px;
+}
+
+.gnbList ul {
+    display: flex;
+    align-items: center;
+    width:100%
+    
+}
+
+.gnbList ul li{
+    height:80px;
+    line-height: 80px;
+    margin:0 40px;
+
+}
+
+.menuIcon {
+    margin:0 20px;
+    box-sizing: border-box;
+
+}
+
+.btnBox{
+    background-image:url(./20220805_160844.png);
+    background-size: cover;
+    height:100vh;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: blue;
+
+}
+
+.btnBox{
+    display: flex;
+    width: 100vw;
+    justify-content: space-between;
+}
+
+button {
+    border-radius: 50%;
+    border-width: 0;
+    width:50px;
+    height:50px;
+    margin:0 30px;
+    background-color: rgba(256,256,256,0.6);
+    font-size: 20px;
+}
+
+.modalBg {
+    width:500px;
+    height:340px;
+    background-color: white;
+}
+.modalBg .modal .titleBox{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #e8e8e8;
+    margin:0 20px;
+    height: 60px;
+    line-height: 60px;
+
+}
+.btnClose {
+    margin-right:20px;
+}
+
+.contentsBox > p {
+    margin:20px
+}
+
+
+@media (max-width: 768px) {
+
+
+.gnbList.on {
+    height:100vh;
+}
+
+.gnbList.on .listLi {
+    transform: translate(0);
+}
+
+.gnbList .listLi {
+        position:absolute;
+        top:0;
+        right:0;
+        width:200px;
+        height:100%;
+        transform: translate(0);
+        flex-direction:column;
+        background-color: #fff;
+    }
+
+.gnbList .listLi li {
+        line-height: 60px;
+        text-align: center;
+        width:200px;
+        height:60px;
+        border-bottom: 1px solid #e8e8e8;
+    }
+
+
+.menuIcon {
+      display: block;
+    }
+  }
+  

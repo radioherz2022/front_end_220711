@@ -31,7 +31,6 @@ btnList.forEach((btn, idx) => {
     move();
   });
 });
-
 function move() {
   window.scrollTo({ top: window.innerHeight * index, behavior: "smooth" });
   btnList.forEach((btn, idx) => {
