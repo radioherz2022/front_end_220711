@@ -18,14 +18,14 @@
     margin-left: 20px;
 }
 
-.gnbList ul {
+#gnbList ul {
     display: flex;
     align-items: center;
     width:100%
     
 }
 
-.gnbList ul li{
+#gnbList ul li{
     height:80px;
     line-height: 80px;
     margin:0 40px;
@@ -34,28 +34,21 @@
 
 .menuIcon {
     margin:0 20px;
-    box-sizing: border-box;
-
-}
-
-.btnBox{
-    background-image:url(./20220805_160844.png);
-    background-size: cover;
-    height:100vh;
-    display: flex;
-    justify-content:space-between;
-    align-items: center;
-    background-color: blue;
 
 }
 
 .btnBox{
     display: flex;
+    position: absolute;
+    top:0;
+    left: 0;
     width: 100vw;
+    height: 100vh;
     justify-content: space-between;
+    align-items: center;
 }
 
-button {
+.btnBox button {
     border-radius: 50%;
     border-width: 0;
     width:50px;
@@ -63,9 +56,49 @@ button {
     margin:0 30px;
     background-color: rgba(256,256,256,0.6);
     font-size: 20px;
+    cursor: pointer;
+}
+
+.slideContainer ul {
+    width:300vw;
+    display: flex;
+}
+
+
+.slideContainer ul .slide {
+    display: flex;
+    width:100vw;
+    height:100vh;
+}
+
+.slideContainer ul .slide:nth-child(1) {
+    background-image:url(./20220805_160844.png);
+    background-size: cover;
+}
+
+.slideContainer ul .slide:nth-child(2){
+    background-image:url(./20220805_160858.png);
+    background-size: cover;
+}
+.slideContainer ul .slide:nth-child(3){
+    background-image:url(./20220805_160910.png);
+    background-size: cover;
 }
 
 .modalBg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.4);
+    top:0;
+    left:0;
+}
+
+
+.modalBg .modal {
     width:500px;
     height:340px;
     background-color: white;
@@ -74,7 +107,7 @@ button {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid #e8e8e8;
-    margin:0 20px;
+    padding:10px;
     height: 60px;
     line-height: 60px;
 
@@ -83,34 +116,37 @@ button {
     margin-right:20px;
 }
 
-.contentsBox > p {
-    margin:20px
+.modalBg .modal .contentsBox {
+    padding:10px
+}
+
+.btnClose{
+    cursor: pointer;
+}
+
+.modalBg.hide {
+    display:none;
 }
 
 
 @media (max-width: 768px) {
 
 
-.gnbList.on {
-    height:100vh;
-}
 
-.gnbList.on .listLi {
-    transform: translate(0);
-}
 
-.gnbList .listLi {
+#gnbList .listLi {
         position:absolute;
         top:0;
         right:0;
         width:200px;
         height:100%;
-        transform: translate(0);
+        transform: translate(200px);
         flex-direction:column;
         background-color: #fff;
+        transition: transform 0.4s;
     }
 
-.gnbList .listLi li {
+    #gnbList .listLi li {
         line-height: 60px;
         text-align: center;
         width:200px;
@@ -119,8 +155,22 @@ button {
     }
 
 
+    #gnbList.on {
+        height: 100vh;
+    
+    }
+    
+
+#gnbList.on .listLi {
+     transform: translate(0);
+}
+
+
+
+
 .menuIcon {
       display: block;
+      cursor: pointer;
     }
   }
   

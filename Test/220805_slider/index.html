@@ -8,13 +8,14 @@
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" href="../../reset.css"> 
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
+    <script src="./index.js" defer></script>
 </head>
 
 <body>
-    <div class="container">
+    <header>
         <nav class="navBox">
             <h2>logo</h2>
-            <div class="gnbList">
+            <div id="gnbList">
                 <ul class="listLi">
                     <li><a href="">HTML</a></li>
                     <li><a href="">CSS</a></li>
@@ -26,10 +27,19 @@
                 <a href=""> <i class="xi-bars"></i></a>
             </div>
         </nav>
-            <div class="btnBox">
-                <button><</button>
-                <button>></button>
-            </div>
+
+    </header>
+
+    <div class="slideContainer">
+      <ul>
+        <li class="slide"></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+      </ul>
+      <div class="btnBox">
+        <button class="slideLeft"><</button>
+        <button class="slideRight">></button>
+    </div>
     </div>
     <div class="modalBg">
         <div class="modal">
@@ -43,6 +53,7 @@
             <p>모달창의 내용이 들어가는 부분입니다.</p>
           </div>
         </div>
+    </div>
     
 </body>
 </html>
