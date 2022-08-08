@@ -3,6 +3,7 @@
 *{
     list-style: none;
     text-decoration: none;
+    box-sizing: border-box;
 }
 
 .navBox {
@@ -32,9 +33,8 @@
 
 }
 
-.menuIcon {
-    margin:0 20px;
-
+.navBox .menuIcon {
+    display: none;
 }
 
 .btnBox{
@@ -59,9 +59,14 @@
     cursor: pointer;
 }
 
+.slideContainer {
+    overflow: hidden;
+}
+
 .slideContainer ul {
     width:300vw;
     display: flex;
+    transition:0.3s;
 }
 
 
@@ -114,15 +119,13 @@
 }
 .btnClose {
     margin-right:20px;
+    cursor: pointer;
 }
 
 .modalBg .modal .contentsBox {
     padding:10px
 }
 
-.btnClose{
-    cursor: pointer;
-}
 
 .modalBg.hide {
     display:none;
@@ -131,16 +134,34 @@
 
 @media (max-width: 768px) {
 
+    header .navBox .menuIcon {
+        margin:0 20px;
+        display: block;
+        cursor: pointer;
+        z-index: 1;
+      }
 
 
+    #gnbList {
+        position:absolute;
+        top:0;
+        left:0;
+        width:100vw;
+        height:0;
+        overflow: hidden;
+        background-color: rgba(0,0,0,0.2);
+    }
 
-#gnbList .listLi {
+    #gnbList.on {
+        height: 100vh;
+    }
+
+    #gnbList .listLi {
         position:absolute;
         top:0;
         right:0;
         width:200px;
-        height:100%;
-        transform: translate(200px);
+
         flex-direction:column;
         background-color: #fff;
         transition: transform 0.4s;
@@ -155,22 +176,11 @@
     }
 
 
-    #gnbList.on {
-        height: 100vh;
-    
+    #gnbList.on .listLi {
+        transition: 0.4s;
     }
+
     
 
-#gnbList.on .listLi {
-     transform: translate(0);
-}
-
-
-
-
-.menuIcon {
-      display: block;
-      cursor: pointer;
-    }
   }
   

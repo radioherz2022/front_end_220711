@@ -1,11 +1,11 @@
 
-let btnSide = document.querySelector(".menuIcon");
+let btnSide = document.querySelector(".navBox .menuIcon");
 let gnbList = document.querySelector("#gnbList");
+
+
 btnSide.addEventListener("click", function () {
   gnbList.classList.add("on");
 });
-
-
 
 window.addEventListener("resize", function () {
   if (this.innerWidth > 768) {
@@ -38,7 +38,7 @@ slideLeft.addEventListener("click", function () {
 let modalBg = document.querySelector(".modalBg");
 let modal = modalBg.querySelector(".modal");
 let btnClose = modalBg.querySelector(".btnClose");
-let liConnect = document.querySelector(".listLi")
+let liConnect = document.querySelector("#gnbList ul li")
 
 btnClose.addEventListener("click", function () {
   modalBg.classList.add("hide");
@@ -46,7 +46,7 @@ btnClose.addEventListener("click", function () {
 
 
 liConnect.addEventListener("click", function(){
-  modal.classList.remove("hide");
+  modalBg.classList.remove("hide");
 })
 
 
