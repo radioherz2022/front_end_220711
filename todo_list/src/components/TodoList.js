@@ -11,7 +11,7 @@ export default function TodoList({todoList, onToggle, onRemove}){
         <TodoItem key={todo.id} todo={todo} onToggle={onToggle} onRemove={onRemove}/>
         ))} 
     </Block>
-)
+);
 }
 
 const Block = styled.ul`

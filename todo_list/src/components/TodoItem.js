@@ -3,8 +3,11 @@ import styled, { css, keyframes } from "styled-components";
 
 export default function TodoItem({todo, onToggle, onRemove}){
     const [disappear, setDisappear] = useState(false);
-return <Block 
-onClick = {()=> onToggle(todo.id)} done = {todo.done} disappear={disappear}>
+return (<Block 
+onClick = {()=> onToggle(todo.id)} 
+done = {todo.done} 
+disappear={disappear}
+>
 <p>{todo.text}</p>
 <BtnDel 
 
@@ -20,6 +23,7 @@ onClick={(e) => {
     <div>Delete</div>
     </BtnDel>
 </Block>
+);
 }
 
 const slideOut = keyframes`
@@ -37,9 +41,9 @@ padding-left: 10px;
 user-select: none;
 
 
-
 cursor:pointer;
-${({done}) => done && css`
+${({done}) => 
+done && css`
     p{
     text-decoration: line-through;
     color:#ddd;
