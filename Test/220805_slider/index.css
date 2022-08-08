@@ -108,8 +108,10 @@
     height:340px;
     background-color: white;
 }
+
 .modalBg .modal .titleBox{
     display: flex;
+    align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid #e8e8e8;
     padding:10px;
@@ -117,15 +119,11 @@
     line-height: 60px;
 
 }
+
 .btnClose {
-    margin-right:20px;
+    margin-right:10px;
     cursor: pointer;
 }
-
-.modalBg .modal .contentsBox {
-    padding:10px
-}
-
 
 .modalBg.hide {
     display:none;
