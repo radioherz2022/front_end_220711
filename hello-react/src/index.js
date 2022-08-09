@@ -5,15 +5,14 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 
-import WordRelay from './components/WordRelay';
-import TrafficCardFirst from './components/TrafficCardFirst';
-import Header from './components/Header';
+
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   //<React.StrictMode>
     <div>
-    <Header/>
+    <App/>
     </div>
   //</React.StrictMode>
 );

@@ -16,18 +16,18 @@ window.addEventListener("resize", function () {
 
 let slideContainer = document.querySelector(".slideContainer");
 let slideWrapper = document.querySelector(".slideContainer ul");
-let slideImg = document.querySelector(".slide")
-let slideBtn = document.querySelector(".btnBox")
+let slideImg = document.querySelectorAll(".slide")
 let slideLeft = document.querySelector(".slideLeft")
 let slideRight = document.querySelector(".slideRight")
+let currentIndex = 0;
 
 
 slideRight.addEventListener("click", function () {
-  slideWrapper.style.transform = `translateX(${-100 }vw)`;
+  slideWrapper.style.transform = `translateX(${-100 * currentIndex++ }vw)`;
 });
 
 slideLeft.addEventListener("click", function () {
-  slideWrapper.style.transform = `translate(${0}vw)`;
+  slideWrapper.style.transform = `translateX(${0 }vw)`;
 });
 
 

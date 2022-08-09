@@ -1,17 +1,17 @@
 
-import { useState } from "react";
 import styled from "styled-components";
 import {Reset} from "styled-reset";
-import Modal from "./components/ui/Modal";
-import Slider from "./components/ui/Slider";
+import Accordian from "./components/ui/Accordian";
 
 function App(){
-  const [modal, setModal] = useState(false);
   return (
     <Temlate>
     <Reset/>
-      <Slider/>
-      {modal && <Modal setModal = {setModal} />}
+      <Block>
+        <Accordian/>
+        <Accordian/> 
+        <Accordian/>  
+      </Block>
     </Temlate>
   );
 }
@@ -25,7 +25,7 @@ height: 100vh;
 `
 
 const Block = styled.div`
-width: 300px;
+width:300px;
 height: 500px;
 border: 1px solid #ddd;
 border-radius: 8px;

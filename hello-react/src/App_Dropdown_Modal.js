@@ -2,15 +2,17 @@
 import { useState } from "react";
 import styled from "styled-components";
 import {Reset} from "styled-reset";
+import Dropdown from "./components/ui/Dropdown";
 import Modal from "./components/ui/Modal";
-import Slider from "./components/ui/Slider";
 
 function App(){
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(true);
   return (
     <Temlate>
     <Reset/>
-      <Slider/>
+      <Block>
+        <Dropdown/>
+      </Block>
       {modal && <Modal setModal = {setModal} />}
     </Temlate>
   );
