@@ -1,25 +1,17 @@
 import { useState } from "react";
 import styled from "styled-components";
-import { useWordDispatch, useWordNextId } from "./contexts/WordContext";
 
-export default function WordInput(){
-    const dispatch = useWordDispatch();
-    const nextId = useWordNextId();
+export default function WordInput({onCreate}){
     const[inputs, setInputs] = useState({eng:"", kor:"",});
+
     const onChange = (e) => {
         setInputs({
             ...inputs,
             [e.target.name] : e.target.value,
+            // const {name, value} = e.target; 비구조화 할당
+            // [e.target.name] : e.target.value => [name]:value
         })
     }
-
-    const onCreate = (eng, kor) => {
-        dispatch({
-        type:"create_word", 
-        word :{id:nextId.current, eng:eng, kor:kor}, 
-        });
-        nextId.current++;
-    };
 
     return ( 
     <InputBlock>

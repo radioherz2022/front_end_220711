@@ -1,14 +1,14 @@
 import { useState } from "react"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import {FaTrash} from "react-icons/fa"
 import {AiFillCheckCircle, AiOutlineCheckCircle} from "react-icons/ai"
+import { useWordDispatch, useWordState } from "./contexts/WordContext"
 
-export default function WordbookList({wordList, onRemove, onToggle}){
+export default function WordbookList(){
+    const wordList = useWordState();
     return(
     <WordListBlock>
-        {wordList.map(word => (<WordItem key={word.id} word={word} 
-        onRemove={onRemove}
-        onToggle={onToggle}/>))}      
+        {wordList.map(word => (<WordItem key={word.id} word={word} />))}      
     </WordListBlock>
 )
 }
@@ -16,34 +16,31 @@ export default function WordbookList({wordList, onRemove, onToggle}){
 
 
 
+function WordItem ({word}){
 
-function WordItem ({word, onRemove, onToggle}){
     const [active, setActive] = useState(false);
-    return (
-        <WordItemBlock active={active}>
-            <EngBox onClick = {() => setActive(!active)}>
-                <div onClick={(e) => {
-                    e.stopPropagation();
-                    onToggle(word.id);
-                    }}>
-                    {word.active ? <AiFillCheckCircle/> : <AiOutlineCheckCircle/>}
-                </div>                
-                <h3>{word.eng}</h3>
-                <FaTrash 
-                onClick={(e) => {
-                    // 이벤트 전파를 막는 것(버블링 제거)
-                    e.stopPropagation();
-                   onRemove(word.id);
-                    }}/>
+    const dispatch = useWordDispatch();
+    const onToggle = (e) => {
+        e.stopPropagation();
+        dispatch({type:"toggle_word", id:word.id})
+        }
 
+    const onRemove = (e) => {
+        e.stopPropagation();
+        dispatch({type:"remove_word", id:word.id});
+        }
+
+    const CheckIcon = word.active ? <AiFillCheckCircle/> : <AiOutlineCheckCircle/>
+    const Contents = word.kor.map((text, index) => <div>{index + 1}.{text}</div>)
+
+    return (
+        <WordItemBlock onClick = {() => setActive(!active)}>
+            <EngBox>
+                <div onClick={onToggle}>{CheckIcon}</div>                
+                <h3>{word.eng}</h3>
+                <FaTrash onClick={onRemove}/>
             </EngBox>
-            
-            {active && 
-            <p>
-                {word.kor.map((text, index) => 
-                <div>{index + 1}.{text}</div>)}
-            </p>} 
-            
+            {active && <p>{Contents}</p>} 
         </WordItemBlock>
     )
 }

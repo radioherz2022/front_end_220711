@@ -1,19 +1,11 @@
 import styled, { css } from "styled-components";
-import { useWordState } from "./contexts/WordContext";
 
-export default function WordbookHeader(){
-    const state = useWordState();
+export default function WordbookHeader({state}){
     const count = state.length;
     const memorizedNum = state.filter(word => word.active).length;
-// NaN은 falsy한 값
-// => 값1 || 값2 를 사용하면 값1이 true이면 값1을, 값1이 false면 값2로 평가
-// => 0/0은 0이 아니라 NaN
-    const percent = (memorizedNum/count)*100 || 0;
-    const todayStr = new Date().toLocaleDateString("ko-KR", {
+    const todayStr = new Date(). toLocaleDateString("ko-KR", {
         dateStyle : "full"
     })
-
-
     return (
     <HeaderBlock>
         <h2>{todayStr}</h2>
