@@ -35,18 +35,21 @@ header .btnSide {
 
 .slideContainer {
     width:100%;
-    /* overflow: hidden; */
+    height:500px;
+
 }
 
 .slideWrap {
     display: flex;
-    width: 300vw;
+    width: 500vw;
+    height:500px;
     transition: 0.4s;
+    /* overflow: hidden; */
 }
 
 .slide {
     width:100vw;
-    height:500px;
+
     font-size: 30px;
     text-align: center;
     line-height: 500px;
@@ -59,13 +62,19 @@ header .btnSide {
 .slide:nth-child(3){
     background: violet;
 }
+.slide:nth-child(4){
+    background: aquamarine;
+}
+.slide:nth-child(5){
+    background: violet;
+}
+
 
 .btnSlide {
     font-size: 50px;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
-    z-index: 100;
 }
 
 

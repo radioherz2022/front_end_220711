@@ -1,4 +1,4 @@
-import Wordbook from "./components/Wordbook";
+import Wordbook from "./components_0810/Wordbook";
 import {createGlobalStyle} from 'styled-components';
 import { WordProvider } from "./components/contexts/WordContext";
 
@@ -15,10 +15,10 @@ const GlobalStyle = createGlobalStyle`
 function App() {
   return (
     <div>
-      <WordProvider>
+      {/* <WordProvider> */}
         <GlobalStyle/>
         <Wordbook/>
-      </WordProvider>
+      {/* </WordProvider> */}
     </div>
   );
 }

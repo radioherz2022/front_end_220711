@@ -38,12 +38,10 @@ const Container = styled.div`
 
         display: flex;
         height: 300px;
-
-
-
         ${({length, index}) => css`
-        width: ${length * 100}vw;
-        transform: translate(${ index * -100}vw);
+            width: ${length * 100}vw;
+            transform: translate(${ index * -100}vw);
+            transition: 0.25s;
         `}
         /* 둘을 합쳐놓은 값 윗줄 */
         /* width: ${({length}) => length * 100}vw;
@@ -66,12 +64,7 @@ const Container = styled.div`
             
         }
     }
-    /* ${({length}) => css`
-        ul{
-            width:${length * 100}vw;
-        }
 
-    ` } */
 
 `;
 

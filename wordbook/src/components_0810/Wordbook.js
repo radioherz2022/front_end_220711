@@ -53,9 +53,9 @@ const onToggle = (id) => {
 }
 
 // 브라우저에 저장하는 방법
-useEffect(() => {
-    localStorage.setItem("wordList", JSON.stringify(state))
-}, [state])
+    useEffect(() => {
+        localStorage.setItem("wordList", JSON.stringify(state))
+    }, [state])
 
     return ( 
     <Template>
