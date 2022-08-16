@@ -1,6 +1,6 @@
 var slides = document.querySelector(".slides");
 var slide = document.querySelectorAll(".slides li");
-var currentIndex = 0;
+var currentIndex = 0; // 지금 보고 있는 인덱스 번호
 var slideCount = slide.length;
 var slideWidth = 200;
 var slideMargin = 30;
@@ -22,6 +22,12 @@ function makeClone(){
     }
     updateWidth();
     setInitialPos();
+    setTimeoust(() => {
+        slides.classList.add('animated');
+        // css에 slides.animated의 트랜지션 기능을 추가하기
+    }, 100);
+
+
 }
 
 function updateWidth(){
@@ -32,6 +38,21 @@ function updateWidth(){
     slides.style.width = newWidth;
 }
 
+// 초기위치를 잡는 함수 만들기
 function setInitialPos(){
-    
+    var initialTranslateValue = -(slideWidth + slideMargin)*newSlideCount;
+    slides.style.transform = "translateX(" + initialTranslateValue + "px)";
+}
+
+nextBtn.addEventListener('click', function(){
+    moveSlide(currentIndex + 1);
+})
+
+prevBtn.addEventListener('click', function(){
+    moveSlide(currentIndex - 1);
+})
+
+function moveSlide(num){
+slide.style.left = -num * (slideWidth + slideMargin) + 'px';
+currentIndex = num;
 }
