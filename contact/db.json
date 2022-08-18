@@ -1,0 +1,38 @@
+{
+  "posts": [
+    {
+      "title": "멋진 인생",
+      "author": "라디오헤르쯔",
+      "id": 4
+    },
+    {
+      "title": "dfsdfsdf",
+      "author": "라디오헤르쯔",
+      "id": 8
+    },
+    {
+      "title": "멋진 인생",
+      "author": "라디오헤르쯔",
+      "id": 9
+    },
+    {
+      "title": "멋진 인생",
+      "author": "라디오헤르쯔",
+      "id": 10
+    },
+    {
+      "title": "멋진 인생",
+      "author": "라디오헤르쯔",
+      "id": 11
+    },
+    {
+      "title": "등록은 어떻게 돼?",
+      "author": "라디오헤르쯔",
+      "id": 12
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}
