@@ -1,16 +1,24 @@
 import styled from "styled-components";
+import {Link} from 'react-router-dom'
 
 export default function PopularItem({item}){
+    const {id, title, name, release_date, first_air_date, poster_path} =item;
     const imgUrl = "http://image.tmdb.org/t/p/w300" + item.poster_path;
+    console.log(item)
     return (
     <ItemBlock>
-        <ImgBox>
-        <img src={imgUrl} alt="" /></ImgBox>
-        <TitleText>{item.title}</TitleText>
-        <ReleaseDate>{item.release_date}</ReleaseDate>
+        <Link to={`/${title ? "movie" : "tv"}/${id}`}>
+            <ImgBox><img src={imgUrl} alt={title || name} /></ImgBox>
+            <TitleText>{title || name}</TitleText>
+            <ReleaseDate>{release_date || first_air_date}</ReleaseDate>
+        </Link>
     </ItemBlock>
     )
 }
+
+// 새로고침 없이 그 주소로 이동 하는 명령어 Link
+// import {Link} from 'react-router-dom'
+// 반환값 중 옮겨가야하는 부분을 <Link></Link>로 감싸주기
 
 const ItemBlock = styled.li`
     text-align: center;

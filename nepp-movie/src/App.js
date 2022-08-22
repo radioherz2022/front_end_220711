@@ -15,8 +15,8 @@ function App() {
         <MainBlock>
           <Routes>
             <Route path="/" element={<Home/>}/>
-            <Route path="/movie" element={<Movie/>}/>
-            <Route path="/tv" element={<TV/>}/>
+            <Route path="/movie/*" element={<Movie/>}/>
+            <Route path="/tv/*" element={<TV/>}/>
           </Routes>
         </MainBlock>
     </div>
