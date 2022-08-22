@@ -1,8 +1,20 @@
+import { useEffect } from "react";
 import styled from "styled-components";
 import Navigation from "./Navigation";
 import Search from "./Search";
 
 export default function Header(){
+    const handleScroll = (e) =>{
+        console.log(window.scrollY);
+      }
+    
+    useEffect(() => {
+      window.addEventListener("scroll", handleScroll);
+      return()=>{
+        window.removeEventListener("scroll", handleScroll);
+      }
+    },[])
+
     return (
     <HeaderBlock>
         <Logo>Movie</Logo>
