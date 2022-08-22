@@ -30,7 +30,7 @@ export default function PopularList({title}){
 
     useEffect(() => {
         // tabList가 업데이트 될 때마다 useEffect안의 코드가 실행
-        // => tabList가 별할 때마다 fetchData함수가 재생성 후 실행.
+        // => tabList가 변할 때마다 fetchData함수가 재생성 후 실행.
         const fetchData = async () => {
             // Array.protype.find() => 조건에 부합하는 요소 한개만(첫번째)만 반환(배열x)
             const category = tabList.find(menu => menu.active).category;

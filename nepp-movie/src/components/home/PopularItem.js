@@ -4,7 +4,6 @@ import {Link} from 'react-router-dom'
 export default function PopularItem({item}){
     const {id, title, name, release_date, first_air_date, poster_path} =item;
     const imgUrl = "http://image.tmdb.org/t/p/w300" + item.poster_path;
-    console.log(item)
     return (
     <ItemBlock>
         <Link to={`/${title ? "movie" : "tv"}/${id}`}>
