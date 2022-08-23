@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice</title>
+    <link rel="stylesheet" href="../../reset.css" >
+    <link rel="stylesheet" href="./practice.css" >
+    <link
+      rel="stylesheet"
+      href="//cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css"
+    />
+</head>
+<body>
+    <header>
+        <div id="headerBasic">
+            <h1>Logo</h1>
+            <div class="sideBtn"><i class="xi-bars"></i></div>
+        </div>
+        <!-- <div class="navBox">
+            <ul>
+                <li><a href="">Work</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Careers</a></li>
+                <li><a href="">Request</a></li>
+            </ul>
+            <div class="navBg"></div>
+        </div> -->
+    </header>
+    <section>
+        <div id="mainVisual">
+            <div class="mainTitle">
+                <p>We are digital expert</br>
+                who will make</br>
+                your business greater.</p>
+                <div class="goBtn"><a href="">see works</a></div>
+            </div>
+            <div class="mainBg"></div>
+
+        </div>
+        <div id="contentList">
+            <div class="textBox">
+                <p>
+                    하나의 프로젝트를 완성하기 위해</br>
+                    디테일한 부분까지 집중하고 몰입하여</br>
+                    완벽하게 만들어 냅니다.
+                </p>
+            </div>
+        <div class="listBoxContainer">
+            <div class="listBox1">
+                <div class="thumb">이미지</div>
+                <div class="info">
+                    <h3>인슈어테크 플랫폼 핑클</h3>
+                    <p>construction, PC web</p>
+                    <span><a href="">Read More</a></span>
+                </div>
+            </div>
+            <div class="listBox2">
+                <div class="thumb">이미지</div>
+                <div class="info">
+                    <h3>인슈어테크 플랫폼 핑클</h3>
+                    <p>construction, PC web</p>
+                    <span><a href="">Read More</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="listBoxContainer">
+            <div class="listBox2">
+                <div class="thumb">이미지</div>
+                <div class="info">
+                    <h3>인슈어테크 플랫폼 핑클</h3>
+                    <p>construction, PC web</p>
+                    <span><a href="">Read More</a></span>
+                </div>
+            </div>
+            <div class="listBox1">
+                <div class="thumb">이미지</div>
+                <div class="info">
+                    <h3>인슈어테크 플랫폼 핑클</h3>
+                    <p>construction, PC web</p>
+                    <span><a href="">Read More</a></span>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <script>
+
+
+        // parallax 스크롤 정리한 함수
+
+        let background = document.querySelector(".mainBg");
+        let textBox = document.querySelector(".mainTitle");
+
+        window.addEventListener("scroll", function () {
+        background.style.backgroundPositionY = `${scrollY / 3}px`;
+      });
+
+    </script>
+</body>
+</html>
